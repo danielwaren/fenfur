@@ -17,7 +17,7 @@ const JugadorSearch = () => {
     try {
       const { data, error: supabaseError } = await supabase
         .from('jugadores')
-        .select('nombres, materno, paterno, rut, equipo')  // Select only the specific fields
+        .select('nombres, materno, paterno, rut, equipo')  
         .eq('rut', rut);
       
       if (supabaseError) {
@@ -42,7 +42,7 @@ const JugadorSearch = () => {
   
   return (
     <div className="max-w-3xl mx-auto p-6">
-      <h2 className="text-2xl font-bold mb-6 text-gray-600">Búsqueda de Jugador</h2>
+      <h2 className="text-2xl font-bold mb-6 text-gray-600">Buscar jugador</h2>
       
       <form onSubmit={handleSubmit} className="bg-gray-100 p-6 rounded-lg shadow-md mb-6">
         <div className="mb-4">

@@ -1,6 +1,5 @@
 ---
 import { supabase } from "../../../supabase";
-import CrearJugador from "../components/CrearJugador.jsx";
 const { data, error } = await supabase
   .from("jugadores")
   .select("*")
