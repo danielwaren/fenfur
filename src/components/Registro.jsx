@@ -109,7 +109,7 @@ const JugadorSearch = () => {
                       </tr>
                       <tr>
                         <th className="px-4 py-3 text-left text-sm font-medium text-gray-600 w-1/3">
-                          Nombres
+                          Apellidos
                         </th>
                         <td className="px-4 py-3 text-sm">{jugador.paterno} {jugador.materno}</td>
                       </tr>
