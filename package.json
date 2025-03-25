@@ -9,6 +9,16 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.5.2"
+    "@astrojs/react": "^4.2.1",
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@supabase/supabase-js": "^2.49.1",
+    "astro": "^5.5.2",
+    "dotenv": "^16.4.7",
+    "flowbite": "^3.1.2",
+    "formik": "^2.4.6",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "swiper": "^11.2.6",
+    "yup": "^1.6.1"
   }
 }

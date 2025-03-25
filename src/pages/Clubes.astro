@@ -1,0 +1,72 @@
+---
+import Layout from "../layouts/LayoutPage.astro";
+import Card from "../components/Card.astro";
+---
+<Layout>
+    <div class="contenedor">
+        <div class="flex-equipos">
+            <Card title="Club deportivo y social Fenix" ruta='equipos/Fenix' img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5Ys_INZYdf83DginXo9ZH6DFz8kCKWRZXTA&s"/>
+            <Card title="Universidad de Chile" img="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2d/Emblema_del_Club_Universidad_de_Chile.png/1200px-Emblema_del_Club_Universidad_de_Chile.png"/>
+            <Card title="Colo Colo Austral" img="https://i.pinimg.com/474x/5a/f5/33/5af533b7edab9215d16f227ddf537cc6.jpg"/>
+            <Card title="Club deportivo Cisnes" img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjtYv-6iKH0kxyPgPL71kVMo0FuhAU-h5SJA&s"/>
+            <Card title="Club deportivo y social Arrayán" ruta="equipos/Arrayan" img="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjtYv-6iKH0kxyPgPL71kVMo0FuhAU-h5SJA&s"/>
+        </div>
+    </div>
+</Layout>
+<style>
+    /* Base styles */
+    .contenedor {
+        width: 100%;
+        max-width: 100%;
+        min-height: 90vh;
+        margin: 0 auto;
+        padding: 1rem;
+        display: flex;
+
+        justify-content: center;
+        /* Añadimos padding-top para evitar que el contenido quede justo debajo del nav */
+        padding-top: calc(10vh + 1rem);
+        /* Agregando box-sizing para un mejor manejo del espacio */
+        box-sizing: border-box;
+    }
+   
+    .flex-equipos {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 1rem;
+        width: 100%;
+        justify-content: center;
+    }
+
+    /* Estilos responsive para los items dentro del contenedor flex */
+    .flex-equipos > :global(*) {
+        /* Ajuste para móviles (1 columna) */
+        flex: 1 1 100%;
+        max-width: 100%;
+    }
+
+    /* Media queries para diferentes tamaños de pantalla */
+    @media (min-width: 640px) {
+        .flex-equipos > :global(*) {
+            /* Ajuste para tablets (2 columnas) */
+            flex: 1 1 calc(50% - 1rem);
+            max-width: calc(50% - 1rem);
+        }
+    }
+
+    @media (min-width: 992px) {
+        .flex-equipos > :global(*) {
+            /* Ajuste para pantallas medianas (3 columnas) */
+            flex: 1 1 calc(33.333% - 1rem);
+            max-width: calc(33.333% - 1rem);
+        }
+    }
+
+    @media (min-width: 1200px) {
+        .flex-equipos > :global(*) {
+            /* Ajuste para pantallas grandes (4 columnas) */
+            flex: 1 1 calc(25% - 1rem);
+            max-width: calc(25% - 1rem);
+        }
+    }
+</style>

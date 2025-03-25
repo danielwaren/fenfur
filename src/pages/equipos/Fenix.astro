@@ -1,0 +1,41 @@
+---
+import { supabase } from "../../../supabase";
+import CrearJugador from "../components/CrearJugador.jsx";
+const { data, error } = await supabase
+  .from("jugadores")
+  .select("*")
+  .eq("equipo", "Arrayan");
+import Layout from "../../layouts/LayoutPage.astro";
+---
+
+<Layout>
+  <div class="flex p-8 h-screen bg-gray-400">
+    <div class="w-1/2 flex flex-col items-start justify-center bg-gray-500">
+      <h1 class="text-4xl">Club Deportivo y Social Arrayán</h1>
+      <p class="py-8 mr-8">
+        El Club Deportivo y Social Arrayán de Puerto Cisnes es una joven y
+        prometedora institución que ha surgido con el objetivo de fomentar la
+        actividad deportiva y fortalecer el tejido social de la comunidad.
+        Aunque es un club nuevo, ya ha demostrado un gran compromiso con el
+        desarrollo del fútbol en la zona, brindando un espacio inclusivo para
+        niños, jóvenes y adultos que desean practicar este deporte. El Arrayán
+        se destaca por su enfoque en la formación integral, promoviendo no solo
+        habilidades técnicas y tácticas en el fútbol, sino también valores como
+        el trabajo en equipo, la disciplina y el respeto. Su presencia en Puerto
+        Cisnes ha revitalizado el interés por el deporte, convirtiéndose en un
+        punto de encuentro para las familias y un semillero de talentos locales.
+        Con una visión de crecimiento y arraigo comunitario, el Club Deportivo y
+        Social Arrayán se perfila como una institución clave para el desarrollo
+        deportivo y social de Puerto Cisnes, proyectándose con entusiasmo hacia
+        un futuro lleno de logros y oportunidades.
+      </p>
+    </div>
+    <div class="w-1/2 flex justify-content items-center">
+      <img
+      src="https://cdn.pixabay.com/photo/2015/01/26/22/40/child-613199_960_720.jpg"
+      alt="foto"
+      class="w-full h-96 object-cover rounded-xl"
+    />
+    </div>   
+  </div>
+</Layout>

@@ -1,0 +1,12 @@
+---
+import LayoutPage from "../layouts/LayoutPage.astro"
+import Registro from "../components/Registro.jsx"
+---
+
+<LayoutPage>
+    <div class="flex justify-center items-center w-full h-screen">
+        <div class="h-auto w-96 bg-gray-300 rounded-xl">
+            <Registro client:load/>
+        </div>
+    </div>
+</LayoutPage>

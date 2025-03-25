@@ -1,0 +1,176 @@
+---
+import Nav from "./Nav.astro"
+---
+
+<div class="fullscreen-carousel">   
+  <div class="swiper"
+    <div class="swiper-wrapper">
+      <!-- Slide 1 -->
+      <div class="swiper-slide">
+        <div class="slide-content">
+          <h2>Bienvenido a nuestro sitio</h2>
+          <p>Descubre todo lo que tenemos para ofrecerte</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <img src="https://cdn.pixabay.com/photo/2019/10/29/07/33/soccer-4586282_960_720.jpg" alt="Imagen descriptiva 1" />
+      </div>
+      
+      <!-- Slide 2 -->
+      <div class="swiper-slide">
+        <div class="slide-content">
+          <h2>Nuestros Servicios</h2>
+          <p>Soluciones personalizadas para tus necesidades</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <img src="https://cdn.pixabay.com/photo/2022/03/08/15/44/boy-7056003_960_720.jpg" alt="Imagen descriptiva 2" />
+      </div>
+      
+      <!-- Slide 3 -->
+      <div class="swiper-slide">
+        <div class="slide-content">
+          <h2>Contacta con Nosotros</h2>
+          <p>Estamos aquí para ayudarte</p>
+          <div class="social-icons">
+            <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          </div>
+        </div>
+        <img src="https://cdn.pixabay.com/photo/2016/05/27/14/33/football-1419954_640.jpg" alt="Imagen descriptiva 3" />
+      </div>
+    </div>
+    
+    <!-- Navegación -->
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</div>
+
+<style>
+  .fullscreen-carousel {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .swiper {
+    width: 100%;
+    height: 100%;
+  }
+  
+  .swiper-slide {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+  
+  .swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .slide-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-align: center;
+    max-width: 80%;
+    padding: 2rem;
+    border-radius: 8px;
+  }
+  
+  .slide-content h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .slide-content p {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+  }
+  
+  .social-icons a {
+    color: white;
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+  }
+  
+  .social-icons a:hover {
+    transform: scale(1.2);
+    color: #f0f0f0;
+  }
+  
+  .swiper-button-next,
+  .swiper-button-prev {
+    color: white;
+  }
+  
+  .swiper-pagination-bullet {
+    background: white;
+  }
+  
+  .swiper-pagination-bullet-active {
+    background: #ffffff;
+  }
+</style>
+
+<script>
+  // Este script se ejecutará en el cliente
+  import Swiper from 'swiper';
+  import { Navigation, Pagination, Autoplay, EffectFade } from 'swiper/modules';
+  import 'swiper/css';
+  import 'swiper/css/navigation';
+  import 'swiper/css/pagination';
+  import 'swiper/css/effect-fade';
+  
+  // Importación para los iconos de redes sociales
+  import '@fortawesome/fontawesome-free/css/all.min.css';
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    new Swiper('.swiper', {
+      modules: [Navigation, Pagination, Autoplay, EffectFade],
+      slidesPerView: 1,
+      spaceBetween: 0,
+      loop: true,
+      effect: 'fade',
+      speed: 1000,
+      autoplay: {
+        delay: 5000,
+        disableOnInteraction: false,
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+      },
+    });
+  });
+</script>

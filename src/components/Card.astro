@@ -1,0 +1,102 @@
+---
+const { title, img, ruta } = Astro.props;
+---
+<div class="card">
+    <div class="flex flex-col w-full">
+        <h2>{title}</h2>
+        <a href={ruta}
+          type="submit"
+          class="my-2 w-full bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-md transition duration-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 disabled:opacity-50"
+        >
+          Más información
+        </a>
+    </div>
+    <div class="img-container">
+        <img src={img} alt={title}>
+    </div>
+</div>
+
+<style>
+    .card {
+        width: 100%;
+        height: auto;
+        min-height: 230px;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 1rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        gap: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .img-container {
+        width: 50%;
+        height: 180px;
+        overflow: hidden;
+    }
+
+    h2 {
+        width: 100%;
+        font-size: 1.3rem;
+        margin-bottom: 0.5rem;
+        font-weight: 600;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 10px;
+        transition: transform 0.3s ease;
+    }
+
+    /* Responsive breakpoints */
+    @media (max-width: 1024px) {
+        .card {
+            width: 100%;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .img-container {
+            width: 40%;
+            height: 160px;
+        }
+        
+        h2 {
+            font-size: 1.1rem;
+        }
+    }
+
+    @media (max-width: 640px) {
+        .card {
+            flex-direction: column-reverse;
+            text-align: center;
+        }
+        
+        .img-container {
+            width: 80%;
+            height: 140px;
+            margin-bottom: 1rem;
+        }
+        
+        .flex {
+            width: 100%;
+        }
+    }
+
+    @media (hover: hover) {
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card:hover img {
+            transform: scale(1.05);
+        }
+    }
+</style>

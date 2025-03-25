@@ -1,0 +1,34 @@
+---
+import Nav from '../components/Nav.jsx'
+---
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Astro Basics</title>
+		<link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+
+	</head>
+	<body>
+		<div class="absolute z-10 w-full h-20 bg-gray-90 top-0"><Nav client:load/></div>
+		<slot />
+		<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100vh;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		background: radial-gradient(at 38.3534849122126% 26.25803397456017%, hsla(234, 69.89247311827957%, 36.47058823529412%, 1) 0%, hsla(234, 69.89247311827957%, 36.47058823529412%, 0) 100%), radial-gradient(at 81.65247356572834% 7.66064477651619%, hsla(354, 69.89247311827957%, 36.47058823529412%, 1) 0%, hsla(354, 69.89247311827957%, 36.47058823529412%, 0) 100%), radial-gradient(at 7.015184334166047% 46.46278638033432%, hsla(234, 69.89247311827957%, 36.47058823529412%, 1) 0%, hsla(234, 69.89247311827957%, 36.47058823529412%, 0) 100%), radial-gradient(at 59.21324895394135% 92.40580913190867%, hsla(354, 69.89247311827957%, 36.47058823529412%, 1) 0%, hsla(354, 69.89247311827957%, 36.47058823529412%, 0) 100%), radial-gradient(at 33.35398587639455% 87.93681948103358%, hsla(234, 69.89247311827957%, 36.47058823529412%, 1) 0%, hsla(234, 69.89247311827957%, 36.47058823529412%, 0) 100%), radial-gradient(at 74.14940452160543% 72.71067605139211%, hsla(354, 69.89247311827957%, 36.47058823529412%, 1) 0%, hsla(354, 69.89247311827957%, 36.47058823529412%, 0) 100%);            
+	}
+</style>
