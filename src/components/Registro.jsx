@@ -17,7 +17,7 @@ const JugadorSearch = () => {
     try {
       const { data, error: supabaseError } = await supabase
         .from('jugadores')
-        .select('nombres, materno, paterno, rut, club', nacimiento, asociacion)  
+        .select('nombres, materno, paterno, rut, club, nacimiento, asociacion')  
         .eq('rut', rut);
       
       if (supabaseError) {
