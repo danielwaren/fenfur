@@ -77,7 +77,7 @@ const JugadorSearch = () => {
       {jugador && 
         <div className="bg-green-50 border border-green-200 px-4 py-3 rounded-md mb-6">
           <p className="text-green-800">
-            Jugador encontrado: {jugador.nombres}
+            Jugador encontrado: {jugador.nombres} {jugador.materno} {jugador.paterno}
           </p>
           <button 
             onClick={() => setShowModal(true)}
