@@ -1,11 +1,10 @@
 ---
-import { supabase } from "../../supabase";
-import CrearJugador from "../components/CrearJugador.jsx";
+import { supabase } from "../../../supabase";
 const { data, error } = await supabase
   .from("jugadores")
   .select("*")
   .eq("equipo", "Arrayan");
-import Layout from "../layouts/Layout.astro";
+import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout>
